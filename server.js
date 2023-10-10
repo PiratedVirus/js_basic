@@ -3,7 +3,7 @@ const app = express();
 const PORT = 8080;
 
 app.get('/', (req, res) => {
-    res.send('Hello from git via jenkins! Its working, but this time it might fail on prod env because now i am checking with default values along with mongo db');
+    res.send('Its working, but this time it might fail on prod env because now i am checking with default values along with mongo db');
 });
 
 app.listen(PORT, () => {
