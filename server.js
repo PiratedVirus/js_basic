@@ -9,3 +9,15 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server started on http://localhost:${PORT}`);
 });
+const MongoClient = require('mongodb').MongoClient;
+const url = 'mongodb://localhost:27017/';
+
+MongoClient.connect(url, { useUnifiedTopology: true }, (err, db) => {
+    if (err) throw err;
+
+    // Create a new database named "mydatabase"
+    const dbo = db.db("mydatabase");
+
+    console.log("Database created!");
+    db.close();
+});
